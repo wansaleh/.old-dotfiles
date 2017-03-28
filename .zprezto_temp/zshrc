@@ -1,0 +1,33 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+source ~/.aliases
+
+eval "$(gulp --completion=zsh)"
+
+export NVM_DIR="/Users/wan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Add homebrew to the completion path
+fpath=("/usr/local/bin/" $fpath)
+
+source $(echo $(which vv)-completions)
+
+# source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh
+
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+
+export PATH=/Applications/MAMP/bin/php/php7.0.10/bin:/Applications/MAMP/Library/bin:$PATH
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -1,0 +1,45 @@
+# Antigen
+source /usr/local/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle ruby
+antigen bundle gem
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle ascii-soup/zsh-url-highlighter
+antigen bundle joel-porquet/zsh-dircolors-solarized
+antigen bundle rupa/z
+antigen bundle supercrabtree/k
+antigen bundle zsh-users/zaw
+
+# antigen theme eastwood
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+
+antigen apply
+
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# source $HOME/.zplug.zsh
+
+# Add homebrew to the completion path
+fpath=("/usr/local/bin/" $fpath)
+
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+
+export PATH=/Applications/MAMP/bin/php/php7.0.13/bin:/Applications/MAMP/Library/bin:$PATH
+
+export AWS_ACCESS_KEY_ID=AKIAJ2AW6OZ5ODLETEOA
+export AWS_SECRET_ACCESS_KEY=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
+
+# source $(echo $(which vv)-completions)
+# source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh
+
+source $HOME/.aliases.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
